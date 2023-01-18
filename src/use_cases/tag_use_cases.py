@@ -1,14 +1,6 @@
 """Tag Use Cases"""
 
-from abc import ABC, abstractmethod
-
-
-class TagDatabaseService(ABC):
-    """Tag Database Service"""
-
-    @abstractmethod
-    def find_all(self):
-        """Retrieves tags"""
+from src.services.database_service import TagDatabaseService
 
 
 class TagUseCases:
@@ -17,6 +9,6 @@ class TagUseCases:
     def __init__(self, database_service: TagDatabaseService):
         self.database_service = database_service
 
-    def getAll(self):
+    def get_all(self):
         """Retrieves tags from database services"""
         return self.database_service.find_all()
