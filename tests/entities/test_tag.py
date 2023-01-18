@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from src.tag import Tag
+from src.entities.tag import Tag
 
 
 class TestTag:
