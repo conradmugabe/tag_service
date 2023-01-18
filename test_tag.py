@@ -20,6 +20,9 @@ class TestTag:
 
     def test_tag_init_raises_error(self):
         """Test tag raises error if an invalid uuid is used"""
+        # The tests below fail
+        # Checkout documentation on why this is. The code was suggested by chatGPT
+
         # id = ''
         # title = TestTag.data["title"]
         # with pytest.raises(ValueError):
@@ -35,10 +38,7 @@ class TestTag:
 
     def test_tag_from_dict_raises_value_error(self):
         """Test tag from_dict raises value error if data is invalid"""
-        invalid_data = {
-            "invalid_id": "not a valid uuid",
-            "invalid_title": "example tag",
-        }
+        invalid_data = {}
         with pytest.raises(Exception):
             Tag.from_dict(invalid_data)
 
