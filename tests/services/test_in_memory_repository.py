@@ -11,7 +11,6 @@ def tags_list():
     return []
 
 
-@pytest.mark.usefixtures("tags_list")
 class TestInMemoryRepository:
     """Test In Memory Repository"""
 
