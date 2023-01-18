@@ -1,3 +1,5 @@
+"""Test Tag Entity"""
+
 import json
 
 import pytest
@@ -6,13 +8,15 @@ from src.entities.tag_entity import Tag
 
 
 class TestTag:
+    """Test Tag Entity class"""
+
     data = {"id": "6f7a8c66-2f7f-4f5d-9c9b-f2ab719c6a50", "title": "example tag"}
 
     def test_tag_init(self):
         """Tag class successful initializes with the right arguments"""
-        id = TestTag.data["id"]
+        tag_id = TestTag.data["id"]
         title = TestTag.data["title"]
-        tag = Tag(id=id, title=title)
+        tag = Tag(id=tag_id, title=title)
 
         assert tag.id == TestTag.data["id"]
         assert tag.title == TestTag.data["title"]
@@ -43,6 +47,7 @@ class TestTag:
             Tag.from_dict(invalid_data)
 
     def test_tag_to_dict(self):
+        """Test tag to_dict method"""
         tag = Tag.from_dict(TestTag.data)
 
         assert tag.to_dict() == TestTag.data
