@@ -1,3 +1,5 @@
+import json
+
 import pytest
 
 from tag import Tag
@@ -44,3 +46,10 @@ class TestTag:
         tag = Tag.from_dict(TestTag.data)
 
         assert tag.to_dict() == TestTag.data
+
+    def test_tag_to_json(self):
+        """Test tag to_json returns a json string of a tag"""
+        tag = Tag.from_dict(TestTag.data)
+
+        json_tag = tag.to_json()
+        assert TestTag.data == json.loads(json_tag)
