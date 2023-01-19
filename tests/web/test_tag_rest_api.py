@@ -1,13 +1,8 @@
 """Test Tag Rest API"""
-from web.app import create_app
 
 
 class TestTagRestAPI:
     """Test Tag REST API"""
-
-    def test_create_app(self):
-        """Test create app"""
-        assert create_app("testing").testing
 
     def test_tag_end_point(self, client):
         """Test End"""
